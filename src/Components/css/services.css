@@ -2,4 +2,22 @@
   /* Services Section */
   --services-bg: #f35b04ff; /* Persimmon - Services section background */
   --services-text: #ffffff; /* White - Text color for Services section */
+
+  /* Accent Colors */
+  --cta-bg: #f7b801ff; /* Selective Yellow - Call to action (CTA) button background */
+  --cta-text: #f18701ff; /* Tangerine - CTA button text */
+
+  /* Card Backgrounds */
+  --card-bg: #f35b04ff; /* Persimmon - Background for cards */
+
+  /* General Background */
+  --bg: #f5f5f5; /* Light gray - General background for the entire page */
+
+  /* Text Colors */
+  --primary-text: #333333; /* Dark text color for readability */
+  --secondary-text: #7678edff; /* Medium Slate Blue - Secondary text color */
+
+  /* Links and Highlights */
+  --link-color: #3d348bff; /* Tekhelet - Color for links */
+  --highlight-color: #f7b801ff; /* Selective Yellow - Highlighted text or elements */
 }

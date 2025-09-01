@@ -1,14 +1,7 @@
 :root {
-
   /* Section Headers */
   --header-bg: #3d348bff; /* Tekhelet - Background of section headers */
   --header-text: #ffffff; /* White - Text color for section headers */
-
-
-  /* Projects Section */
-  --projects-bg: #f5f5f5; /* Light gray - Projects section background */
-  --projects-text: #333333; /* Dark text for Projects section */
-
 
   /* Accent Colors */
   --cta-bg: #f7b801ff; /* Selective Yellow - Call to action (CTA) button background */
