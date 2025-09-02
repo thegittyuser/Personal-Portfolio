@@ -7,7 +7,6 @@ function Hero() {
       <section className="hero">
         <div className="hero-text">
           <h2>Talha Mughal</h2>
-          <em>A Brand Name of IT</em>
           <p>
             Welcome to my personal portfolio where I showcase my projects,
             skills, and experience as a developer.

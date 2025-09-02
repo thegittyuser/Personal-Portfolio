@@ -1,31 +1,11 @@
-:root {
-  /* Section Headers */
-  --header-bg: #3d348bff; /* Tekhelet - Background of section headers */
-  --header-text: #ffffff; /* White - Text color for section headers */
-
-  /* Accent Colors */
-  --cta-bg: #f7b801ff; /* Selective Yellow - Call to action (CTA) button background */
-  --cta-text: #f18701ff; /* Tangerine - CTA button text */
-
-  /* Text Colors */
-  --primary-text: #333333; /* Dark text color for readability */
-  --secondary-text: #7678edff; /* Medium Slate Blue - Secondary text color */
-
-  /* Links and Highlights */
-  --link-color: #3d348bff; /* Tekhelet - Color for links */
-  --highlight-color: #f7b801ff; /* Selective Yellow - Highlighted text or elements */
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .header {
   width: 100%;
   height: 100px;
-  background-color: var(--header-bg);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
   display: flex;
   justify-content: space-around;
 }
@@ -41,7 +21,6 @@
 
 .header .logo-text h2 {
   font-size: 25px;
-  color: var(--header-text);
   font-weight: 500;
 }
 
@@ -61,7 +40,6 @@
 
 .header .navbar ul li {
   font-size: 18px;
-  color: var(--header-text);
 }
 
 .header .navbar ul li:hover {
@@ -79,7 +57,6 @@
 .header .social-icons ul {
   height: 100px;
   list-style-type: none;
-  color: var(--header-text);
   display: flex;
   align-items: center;
   justify-content: center;
