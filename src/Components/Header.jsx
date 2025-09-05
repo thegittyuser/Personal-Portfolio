@@ -10,10 +10,8 @@ function Header() {
         <nav className="navbar">
           <ul>
             <li>Home</li>
-            <li>About</li>
+            <li>Skills</li>
             <li>Services</li>
-            <li>Projects</li>
-            <li>Testimonials</li>
             <li>Contact</li>
           </ul>
         </nav>

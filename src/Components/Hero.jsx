@@ -16,6 +16,12 @@ function Hero() {
           <div className="image-container">
             <img src={heroImage} alt="Talha Mughal Pic" />
           </div>
+          <div className="icons-container">
+            <i className="fa-brands fa-html5 skill-icon"></i>
+            <i className="fa-brands fa-node-js skill-icon"></i>
+            <i className="fa-brands fa-css3-alt skill-icon"></i>
+            <i className="fa-brands fa-react skill-icon"></i>
+          </div>
         </div>
       </section>
     </>

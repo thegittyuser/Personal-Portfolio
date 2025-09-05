@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  height: 500px;
+  height: 600px;
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
@@ -51,4 +51,55 @@
 
 .hero .image-container img {
   width: 100%;
+}
+
+.icons-container {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  /* border: 2px solid yellow; */
+}
+
+.icons-container .skill-icon {
+  font-size: 50px;
+  position: absolute;
+  animation: oscillation 4s ease-in-out infinite;
+  box-shadow: 1px 1px 8px white;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 50%;
+}
+
+.icons-container .fa-html5 {
+  top: 50px;
+  left: 5px;
+}
+
+.icons-container .fa-node-js {
+  bottom: 50px;
+}
+
+.icons-container .fa-css3-alt {
+  bottom: 115px;
+  right: 0;
+}
+
+.icons-container .fa-react {
+  right: 0;
+  top: 20px;
+}
+
+@keyframes oscillation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
