@@ -1,7 +1,7 @@
 .skills {
   width: 100%;
   height: auto;
-  padding: 40px 20px;
+  padding: 80px 20px;
   /* border: 2px solid yellow; */
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 .skills h2 {
   font-size: 40px;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .skills .skills-container {
