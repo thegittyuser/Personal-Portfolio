@@ -1,6 +1,26 @@
+import { useState } from "react";
 import "./css/contact.css";
 
 function Contact() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const phoneNumber = 923249430801;
+
+    const textMessage = `Hello, I am ${username}.\nEmail: ${email}\nPhone No: ${phone}\nSubject: ${subject}\nMessage: ${message}`;
+
+    const encryptMessage = encodeURIComponent(textMessage);
+
+    const callWhatsApp = `https://wa.me/${phoneNumber}?text=${encryptMessage}`;
+
+    window.open(callWhatsApp);
+  };
   return (
     <>
       <section className="contact" id="contact">
@@ -36,13 +56,37 @@ function Contact() {
             </div>
           </div>
           <div className="contact-form">
-            <form>
-              <input type="text" placeholder="Enter Name" />
-              <input type="text" placeholder="Enter Email" />
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Enter Name"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                type="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-              <input type="text" placeholder="Enter Phone No" />
-              <input type="text" placeholder="Enter Subject" />
-              <textarea placeholder="Write Your Message"></textarea>
+              <input
+                type="tel"
+                placeholder="Enter Phone No"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Enter Subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+              />
+              <textarea
+                placeholder="Write Your Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
 
               <input type="submit" value="Send Message" />
             </form>
