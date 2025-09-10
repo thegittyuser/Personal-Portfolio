@@ -11,15 +11,19 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const phoneNumber = 923249430801;
+    if (!username && !email && !phone && !subject && !message) {
+      alert("All Fields Are Required");
+    } else {
+      const phoneNumber = 923249430801;
 
-    const textMessage = `Hello, I am ${username}.\nEmail: ${email}\nPhone No: ${phone}\nSubject: ${subject}\nMessage: ${message}`;
+      const textMessage = `Hello, I am ${username}.\nEmail: ${email}\nPhone No: ${phone}\nSubject: ${subject}\nMessage: ${message}`;
 
-    const encryptMessage = encodeURIComponent(textMessage);
+      const encryptMessage = encodeURIComponent(textMessage);
 
-    const callWhatsApp = `https://wa.me/${phoneNumber}?text=${encryptMessage}`;
+      const callWhatsApp = `https://wa.me/${phoneNumber}?text=${encryptMessage}`;
 
-    window.open(callWhatsApp);
+      window.open(callWhatsApp);
+    }
   };
   return (
     <>
@@ -63,12 +67,18 @@ function Contact() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
+              <span style={{ color: "#ff0000ff", display: "none" }}>
+                Username is required
+              </span>
               <input
                 type="email"
                 placeholder="Enter Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              <span style={{ color: "#ff0000ff", display: "none" }}>
+                Email is required
+              </span>
 
               <input
                 type="tel"
@@ -76,17 +86,29 @@ function Contact() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
+              <span style={{ color: "#ff0000ff", display: "none" }}>
+                Phone is required
+              </span>
+
               <input
                 type="text"
                 placeholder="Enter Subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               />
+              <span style={{ color: "#ff0000ff", display: "none" }}>
+                Subject is required
+              </span>
+
               <textarea
                 placeholder="Write Your Message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
+
+              <span style={{ color: "#ff0000ff", display: "none" }}>
+                Message is required
+              </span>
 
               <input type="submit" value="Send Message" />
             </form>
