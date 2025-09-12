@@ -7,13 +7,30 @@ function Contact() {
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!username && !email && !phone && !subject && !message) {
-      alert("All Fields Are Required");
-    } else {
+    const inputError = {
+      username: !username ? "Username is required" : "",
+      email: !email ? "Email is required" : "",
+      phone: !phone ? "Phone No is required" : "",
+      subject: !subject ? "Subject is required" : "",
+      message: !message ? "Message is required" : "",
+    };
+
+    setErrors(inputError);
+
+    const hasError = Object.values(inputError).some((error) => error !== "");
+
+    if (!hasError) {
       const phoneNumber = 923249430801;
 
       const textMessage = `Hello, I am ${username}.\nEmail: ${email}\nPhone No: ${phone}\nSubject: ${subject}\nMessage: ${message}`;
@@ -23,6 +40,12 @@ function Contact() {
       const callWhatsApp = `https://wa.me/${phoneNumber}?text=${encryptMessage}`;
 
       window.open(callWhatsApp);
+
+      setUsername("");
+      setEmail("");
+      setPhone("");
+      setSubject("");
+      setMessage("");
     }
   };
   return (
@@ -65,50 +88,61 @@ function Contact() {
                 type="text"
                 placeholder="Enter Name"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                  setErrors((prev) => ({ ...prev, username: "" }));
+                }}
               />
-              <span style={{ color: "#ff0000ff", display: "none" }}>
-                Username is required
-              </span>
+              {errors.username && (
+                <span className="error">{errors.username}</span>
+              )}
+
               <input
                 type="email"
                 placeholder="Enter Email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setErrors((prev) => ({ ...prev, email: "" }));
+                }}
               />
-              <span style={{ color: "#ff0000ff", display: "none" }}>
-                Email is required
-              </span>
+              {errors.email && <span className="error">{errors.email}</span>}
 
               <input
                 type="tel"
                 placeholder="Enter Phone No"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                  setErrors((prev) => ({ ...prev, phone: "" }));
+                }}
               />
-              <span style={{ color: "#ff0000ff", display: "none" }}>
-                Phone is required
-              </span>
+              {errors.phone && <span className="error">{errors.phone}</span>}
 
               <input
                 type="text"
                 placeholder="Enter Subject"
                 value={subject}
-                onChange={(e) => setSubject(e.target.value)}
+                onChange={(e) => {
+                  setSubject(e.target.value);
+                  setErrors((prev) => ({ ...prev, subject: "" }));
+                }}
               />
-              <span style={{ color: "#ff0000ff", display: "none" }}>
-                Subject is required
-              </span>
+              {errors.subject && (
+                <span className="error">{errors.subject}</span>
+              )}
 
               <textarea
                 placeholder="Write Your Message"
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  setErrors((prev) => ({ ...prev, message: "" }));
+                }}
               ></textarea>
-
-              <span style={{ color: "#ff0000ff", display: "none" }}>
-                Message is required
-              </span>
+              {errors.message && (
+                <span className="error">{errors.message}</span>
+              )}
 
               <input type="submit" value="Send Message" />
             </form>
