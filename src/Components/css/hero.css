@@ -1,25 +1,49 @@
+/* ===============================
+   HERO SECTION STYLING
+================================== */
+
 .hero {
+  position: relative; /* Enable background layering */
   width: 100%;
   height: 600px;
+  border: 2px solid yellow;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-top: 15px;
   padding: 60px 20px;
+  overflow: hidden; /* Prevent Threads overflow */
+  z-index: 1;
 }
 
+/* === Background Canvas === */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Keep it behind all content */
+  pointer-events: none; /* Allow user interaction through */
+  border: 5px solid white;
+}
+
+/* === Text Area === */
 .hero .hero-text {
   width: 45%;
   height: auto;
-  /* border: 1px solid yellow; */
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .hero .hero-text h2 {
   font-size: 40px;
   font-weight: 500;
+  margin: 0;
 }
 
 .hero .hero-text em {
@@ -31,15 +55,18 @@
   font-size: 20px;
   font-weight: 400;
   margin-top: 20px;
+  line-height: 1.6;
 }
 
+/* === Image and Icons Area === */
 .hero .hero-image {
   width: 45%;
   height: auto;
-  /* border: 1px solid yellow;   */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero .image-container {
@@ -47,17 +74,26 @@
   height: 378px;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero .image-container img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* === Floating Skill Icons === */
 .icons-container {
   width: 450px;
   height: 450px;
   position: absolute;
-  /* border: 2px solid yellow; */
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none; /* Prevent mouse events */
 }
 
 .icons-container .skill-icon {
@@ -70,8 +106,11 @@
   text-align: center;
   line-height: 70px;
   border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
 }
 
+/* === Individual Icon Positions === */
 .icons-container .fa-html5 {
   top: 50px;
   left: 5px;
@@ -79,6 +118,7 @@
 
 .icons-container .fa-node-js {
   bottom: 50px;
+  left: 30%;
 }
 
 .icons-container .fa-css3-alt {
@@ -91,6 +131,7 @@
   top: 20px;
 }
 
+/* === Icon Animation === */
 @keyframes oscillation {
   0% {
     transform: translateY(0px);
@@ -98,7 +139,6 @@
   50% {
     transform: translateY(-10px);
   }
-
   100% {
     transform: translateY(0px);
   }
