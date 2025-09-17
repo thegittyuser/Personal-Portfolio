@@ -1,14 +1,9 @@
 import "./css/hero.css";
 import heroImage from "../assets/images/Talha Mughal.jpg";
-import Threads from "../bits/Threads"; // Adjust path if needed
 
 function Hero() {
   return (
-    <section className="hero">
-      {/* Background Threads Canvas */}
-      <div className="hero-background">
-        <Threads amplitude={1} distance={0.4} enableMouseInteraction={true} />
-      </div>
+    <section className="hero">  
 
       {/* Foreground Content */}
       <div className="hero-text">

@@ -39,7 +39,7 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 1px 1px 8px white , -1px -1px 8px white;
+  box-shadow: 1px 1px 8px white, -1px -1px 8px white;
 }
 
 .card h3 {
@@ -52,4 +52,13 @@
   font-size: 1rem;
   color: #fff;
   line-height: 1.6;
+}
+
+.services button {
+  margin-top: 50px;
+  font-size: 16px;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
 }
